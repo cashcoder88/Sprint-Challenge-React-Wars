@@ -8,29 +8,14 @@
 }
 /* write your parent styles in here for your App.js */
 
-/*    <div className="character" key={char.url}>
-  <h1 className="name">{char.name}</h1>
-  <p className="height">Height: {char.height}cm</p>
-  <p className="weight">Weight: {char.mass}kg</p>
-  <p className="birth_year">Birth Year: {char.birth_year}</p>
-</div>
-            
-  */
-  .containerDiv {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 
-}
-  .character {
-    background: #CDCBC6;
-    
-    color: #482717;
-    margin: 10px;
-    border-radius: 50px;
-    padding: 10px;
-    width: 30%;
-  }
-  .character p {
-    color: #AA7141;
-  }
+ .button {
+   background: #C69E71;
+   color: #482717;
+   font-family: 'Bangers', cursive;
+   height: 45px;
+   width: 200px;
+   margin: 0 5px;
+   border-radius: 20px;
+   font-size: 20px;
+ }
