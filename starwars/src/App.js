@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Chars from './components/Chars'
 
 class App extends Component {
   constructor() {
@@ -35,19 +36,26 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="Header">The Star Wars Tale Of The Tape!</h1>
-        <div className="containerDiv">
-          {this.state.starwarsChars.map((char) => (
-            <div className="character" key={char.url}>
-              <h1 className="name">{char.name}</h1>
-              <p className="height">Height: {char.height}cm</p>
-              <p className="weight">Weight: {char.mass}kg</p>
-              <p className="birth_year">Birth Year: {char.birth_year}</p>
-            </div>
-          ))}
-        </div>
+        <Chars 
+          //props
+          array={this.state.starwarsChars}
+          name={this.state.starwarsChars.name}
+          height={this.state.starwarsChars.height}
+          weight={this.state.starwarsChars.mass}
+          birthYear={this.state.starwarsChars.birth_year}
+        />
       </div>
     );
   }
 }
+
+/*    <div className="character" key={char.url}>
+  <h1 className="name">{char.name}</h1>
+  <p className="height">Height: {char.height}cm</p>
+  <p className="weight">Weight: {char.mass}kg</p>
+  <p className="birth_year">Birth Year: {char.birth_year}</p>
+</div>
+            
+  */
 
 export default App;
