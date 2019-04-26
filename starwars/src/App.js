@@ -33,6 +33,7 @@ class App extends Component {
   //     });
   // };
 
+
   getCharacters = URL => {
     // feel free to research what this code is doing.
     // At a high level we are calling an API to fetch some starwars data from the open web.
@@ -42,14 +43,14 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        console.log(data)
         if (data.next != null){
         this.setState(() => ({ starwarsChars: data.results, next: data.next, previous: data.previous}));
       } if(data.next === null){
         this.setState(() =>({starwarsChars:data.results}))
       }
-      if(data.previous === null && data.next === "https://swapi.co/api/people/?page=2"){
-        alert('First Page, Do Not Press Previous Page')
+      if(data.previous === null){
+        //this.setState(() =>({starwarsChars: data.results, previous: null}))
+        alert('Welcome Byron! Do not click Previous Page While On This Page, Or Else You Will Join The DARK SIDE!')
       }
       })
       .catch(err => {
@@ -69,7 +70,7 @@ class App extends Component {
           weight={this.state.starwarsChars.mass}
           birthYear={this.state.starwarsChars.birth_year}
         />
-        <button className="button" onClick = {()=>this.getCharacters(this.state.previous)}> Previous Page</button>
+        <button id="prev" className="button" onClick = {()=>this.getCharacters(this.state.previous)}> Previous Page</button>
         <button className="button" onClick = {()=>this.getCharacters(this.state.next)}> Next Page</button>
       </div>
     );
